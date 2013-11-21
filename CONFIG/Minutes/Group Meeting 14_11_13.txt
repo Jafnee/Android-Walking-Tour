@@ -28,7 +28,7 @@ We all have access to this, as it has been provided by the uni.
 
 Jack needs to get all the minutes he covered up on to github.
 
-By the end of monday everyone will need to submit their time sheet to Josh, which 
+By the end of monday everyone will need to submit their time sheet , which 
 contains how many hours they have put into the project so far and a description of
 what they've done.
 Information on the time sheet can be found in the Project Guidelines document.
