@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Group Project 15 - Time Schedule" company="" webLink="http://" view-date="2013-12-09" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.0" locale="en_GB">
+    <description/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="57" order="0"/>
+        <field id="tpd4" name="Begin date" width="21" order="1"/>
+        <field id="tpd5" name="End date" width="21" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="50" order="0"/>
+        <field id="1" name="Default role" width="50" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <only-show-weekends value="true"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="5" name="Whole TimeScale" color="#ff0033" meeting="false" start="2013-10-08" duration="123" complete="0" expand="true"/>
+        <task id="7" name="Project Plan Phase TimeScale" color="#00ff00" meeting="false" start="2013-10-08" duration="31" complete="0" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" name="Test Specification Phase TimeScale" color="#0000cc" meeting="false" start="2013-10-21" duration="22" complete="0" expand="true"/>
+        <task id="12" name="Final Design Specification Due" color="#00ff00" meeting="false" start="2013-11-08" duration="25" complete="0" expand="true"/>
+        <task id="14" name="Project Engineering Phase" color="#ffff00" meeting="false" start="2013-11-08" duration="31" complete="0" expand="true">
+            <notes><![CDATA[All core elements of the software, to include:
+
+- UI Design
+- Server Side Base Database tables inc any relevent queries system required
+- Application to Server Interaction finished
+- Application frame work complete (minor bugs may acceptable, however with 		  approval from PL or DPL
+- Application recording GPS and building route as taken by user
+
+These steps are to be completed in line with their deadlines. Following any assigned UML notation.]]></notes>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="Ongoing Unit Level Testing" color="#0000cc" meeting="false" start="2013-11-08" duration="31" complete="0" expand="true">
+            <notes><![CDATA[This phase will follow the previous test plan, and also cover JUnit Testing.
+
+I would like minimum one JUnit Test class for each System Class. Complex Interactions between classes should have there own test elements dedicated also.
+
+It stands upon the Test Team to decide what defines a complex interaction, however large data structures, or algroythms which span several object would be my interpretation.]]></notes>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Initial Acceptance Testing" color="#00ffff" meeting="false" start="2013-12-09" duration="3" complete="0" expand="true">
+            <notes><![CDATA[PL, D'PL, Test Team, QA, D'QA, to use the application for one day.
+
+A short review, on usability, time efficiency, reliability, and features of the system. for the first two days.
+
+3rd day PL, D'PL will provide review, and then work will begin on final System.
+
+No Changes to UML without PL, D'PL approval.]]></notes>
+        </task>
+        <task id="20" name="Rebuild of Application" color="#ffff00" meeting="false" start="2013-12-11" duration="9" complete="0" expand="true">
+            <notes><![CDATA[This phase will see all Classes of the System, review and where needed rewritten for effciency, and stability.
+
+Minor Changes such as small new features, may be added with approval of PL, D'PL]]></notes>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" name="Christmas Break" color="#33ff33" meeting="false" start="2013-12-20" duration="6" complete="0" expand="true">
+            <notes><![CDATA[Yum, Turkey]]></notes>
+            <depend id="22" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="22" name="Rebuilt of Application Cont." color="#ffff00" meeting="false" start="2013-12-26" duration="6" complete="0" expand="true">
+            <notes><![CDATA[As exams will be starting soon, I want all Programming finished by the end of this Phase.
+]]></notes>
+        </task>
+        <task id="23" name="Ongoing Testing" color="#0000cc" meeting="false" start="2013-12-26" duration="22" complete="0" expand="true"/>
+        <task id="24" name="Final Draft Documention Phase" color="#00ff00" meeting="false" start="2013-12-30" duration="21" complete="0" expand="true">
+            <notes><![CDATA[This Phase is during the exam period, so I urge people to concentrate on exams, however if an when you find free time, work on your part of the Final Write up.
+
+After this there is a week dedicated (by department) to the project. An Ideal would be all elements be finalised here, rather than initial write ups.]]></notes>
+        </task>
+        <task id="25" name="Final Acceptance Testing and bug Removal" color="#000000" meeting="false" start="2014-01-01" duration="23" complete="0" expand="true">
+            <notes><![CDATA[Pl, D'PL, QA, D'QA will go over the project, and inform relevent persons of errors or bugs discovered.
+
+These errors / bugs will be remedied as soon as possible so as to allow continued testing.]]></notes>
+        </task>
+        <task id="26" name="Final Handover to Client" color="#ff0000" meeting="true" start="2014-01-24" duration="0" complete="0" expand="true">
+            <notes><![CDATA[All Elements of the Software to be Delivered to the Client by 12:30pm this day.]]></notes>
+        </task>
+        <task id="27" name="Final Handover to Client" color="#0000cc" meeting="true" start="2014-01-24" duration="0" complete="0" expand="true">
+            <notes><![CDATA[All Elements of Design, User Guide, UML Notes handed in by 16:30 this Day.]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd7" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd6" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd3" order="0" width="199" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="75" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="75" visible="true"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
