@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundlayer"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ActivityRegister" >
+
+    <EditText
+        android:id="@+id/txtbxRegisterUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/textfield_background"
+        android:ems="10"
+        android:hint="Username"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="11pt"
+        android:typeface="sans"
+        tools:ignore="HardcodedText" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtbxRegisterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtbxRegisterUsername"
+        android:layout_below="@+id/txtbxRegisterUsername"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/textfield_background"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="11pt"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/txtbxRegisterPasswordConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtbxRegisterPassword"
+        android:layout_below="@+id/txtbxRegisterPassword"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/textfield_background"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="11pt"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/txtbxRegisterPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtbxRegisterPasswordConfirm"
+        android:layout_below="@+id/txtbxRegisterPasswordConfirm"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/textfield_background"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="11pt"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtbxRegisterPersonName"
+        android:layout_below="@+id/txtbxRegisterPersonName"
+        android:layout_marginTop="35dp"
+        android:onClick="btnCreateAccountClicked"
+        android:text="Create Account"
+        tools:ignore="HardcodedText" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_Registration"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>
