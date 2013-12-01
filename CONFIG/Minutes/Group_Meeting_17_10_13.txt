@@ -1,0 +1,38 @@
+Group Meeting - 17/10/13
+
+In attendance:
+- Owen Day
+- Lewis Dale
+- Jafnee Jesmee
+- Mariya Blagoeva
+- Gavin Davies
+- Joshua Moss
+- Bernie Tiddeman
+Not in attendance:
+- Jack Pendlebury
+- Jamie McLoughlin
+
+
+Project plan due week beginning 28th October
+
+needs:
+    Introduction
+    Overview
+    Use-cases
+    UI Design
+    Gantt Chart
+    Risk Analysis
+
+Can build android UI design in Android Studio/Eclipse ADT
+
+Ensure interaction between different parts of group - miscommunication will break program
+
+Roles:
+
+Josh: Team Leader
+Lewis: Deputy Leader
+Mariya: QA Manager
+Jeff: Version Control Expert
+Jack: UI Design
+Gavin: Android Dev
+Jamie: UI Design & Front-end web programming 

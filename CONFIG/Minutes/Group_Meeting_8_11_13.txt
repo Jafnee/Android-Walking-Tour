@@ -1,0 +1,13 @@
+In Attendance: Mariya
+		Jeff
+		Jack
+		Jamie
+Josh and Lewis both have informed us that they will not be attending this meeting for legitimate reasons.
+-------------------------------------------------------------------------------------------------------------------
+Summary
+The Gantt Chart need updating with extra milestones, and more detail (possibly on a per team member basis)
+Mariya hasn't received the final documentation to complete the merging of the 1st part of the Design document. (Received towards the end of the meeting)
+Neil asked about the Test Spec. Jack informed him that he had seen a draft of the test spec the meeting before, and that he had suggested improvements which were being implemented. Neil remembered this.
+Everyone then informed Neil about what they were currently working on.
+Neil was highly critical of the quality of communication within the group, and suggested that we needed a total plan of who is doing which bit of all documentation, possible integrated into the Gantt chart.
+Neil finished the meeting by reaffirming to us that everyone needs to put up a blog post every week to make sure that everyone is working on something. 
