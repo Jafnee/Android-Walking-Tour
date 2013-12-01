@@ -1,7 +1,10 @@
 ﻿List of Minutes for group 15:
 
-!! Below is an example - replace with details of actual minutes
 
-1. 13_09_31_weekly.txt
-2. …..
+1. Group_Meeting_17_10_13.txt
+2. Group_Meeting_14_10_13.txt
+3. Group_Meeting_8_11_13.txt
+4. Group_Meeting_14_11_13.txt
+5. Group_Meeting_20_11_13.txt
+
 
