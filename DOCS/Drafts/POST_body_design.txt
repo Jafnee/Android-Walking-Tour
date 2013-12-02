@@ -1,0 +1,46 @@
+POST body design
+
+
+Purpose of the POST message:
+	
+	The application will need a method of sending a walk tour
+	to the server, when the user decides to upload their walk
+	tour.The POST message will be sent from the android 
+	application to the PHP server, the server will then populate
+	the PHP object and save to the MYSQL database.
+
+
+
+Contents of the POST message:
+
+	A walk tour will be an object of the Walk class.
+
+		-title: Name given to the walk tour.
+		-shortDescription: A short summary of the walk tour.
+		-longDescription: A full description of the walk tour.
+	
+	Each Walk object will have an array of WalkLocation objects.
+
+		-coordinates: The latitude and longitude value of the location.
+		-name: The name given to the location.
+		-description: A description of the location.
+		-image: WalkLocation will have an array of photos. (MultipartRequest)
+
+
+	
+Possible libraries to utilise:
+	-AndroidHttpClient
+	http://developer.android.com/reference/android/net/http/AndroidHttpClient.html
+	
+	-Apache HttpComponents HttpClient
+	http://hc.apache.org/httpcomponents-client-ga/index.html
+
+
+	
+
+Useful Links:
+	-Sending images through post
+	http://stackoverflow.com/questions/2935946/sending-images-using-http-post
+	
+	-Android http client
+	http://www.javacodegeeks.com/2013/06/android-http-client-get-post-download-upload-multipart-request.html
