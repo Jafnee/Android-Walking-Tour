@@ -1,5 +1,3 @@
-POST body design
-
 
 Purpose of the POST message:
 	
