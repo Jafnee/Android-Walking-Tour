@@ -1,0 +1,36 @@
+
+Component Diagram: see visio file
+
+Compilation/inheritance dependencies:
+	User interface depends on Walk.
+	Walk depends on WalkLocation.
+
+BaseWalk:
+	+ getTitle() : String
+	+ setTitle(title : String)
+	+ getShort() : String
+	+ setShort(description : String)
+	+ getLong() : String
+	+ setLong(description : String)
+	+ getLocation() : WalkLocation
+	+ addLocation(location : WalkLocation)
+
+* imported from android.Location
+** imported from android.graphics.Bitmap
+*** imported from java.util.Date
+
+BaseWalkLocation
+	+ getCoordinates() : Location*
+	+ setCoordinates(lat : int, lng : int)
+	+ getName() : String
+	+ setName(name : String)
+	+ getDescription() : String
+	+ setDescription(description : String)
+	+ getPhoto() : Bitmap**
+	+ setPhoto(photo : Bitmap**)
+	+ getTimestamp() : Date***
+	+ setTimestamp(date : Date***)
+
+* imported from android.Location
+** imported from android.graphics.Bitmap
+*** imported from java.util.Date
