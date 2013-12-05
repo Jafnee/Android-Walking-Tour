@@ -1,0 +1,33 @@
+Group Meeting - 05/12/13
+
+In attendance:
+ - Jafnee
+ - Lewis
+ - Owen
+ - Gavin
+ - Joshua
+ 
+ Not in attendance:
+ - Jamie
+ - Jack
+ 
+ Reviewed design specification standards document:
+ 
+ Main issue, identifier names are not consistent; different identifier names are referring to the one and the same thing.
+ 
+ 3.1
+ Deployment diagrams identify the components deployed on each hardware.
+ MySQL server needs a box around it, if it is running on seperate hardware.
+ Identifiers should be the same in 3.1.2 and 3.1.1.
+ 3.1.2 is good, just needs an identifier change.
+ Program 1 and program 2 should be replaced with actual names, these are place holders for the document template.
+ Web application name should be found in QA documents (Walking Tour Displayer?).
+ The labelled arrows should also use the same identifiers as the other diagrams.
+ 
+ User Interface is missing from the breakdown, a fine description of it should be done.
+ 
+ 5.2
+ For each algorithm, the class/method to which it belongs to needs to be specified.
+ 
+ 5.3
+ Not covered during the meeting.
