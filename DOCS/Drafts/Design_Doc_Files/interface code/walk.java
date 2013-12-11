@@ -1,17 +1,17 @@
 package uk.ac.aber.cs22120.fuzzyNinja.pathFinder;
 
-import uk.ac.aber.cs22120.fuzzyNinja.pathFinder.Waypoint;
+import uk.ac.aber.cs22120.fuzzyNinja.pathFinder.WalkLocation;
 import java.util.ArrayList;
 
 /**
 * This class contains information associated with a walking tour.
 * 
 */
-public class Route {
+public class Walk {
 	private String title; // The title of the walking tour
 	private String shortDescription; // A short description of the walking tour
 	private String longDescription; // A long description of the walking tour
-	private ArrayList<Waypoint> waypoints; // A list of the waypoints along the walking tour
+	private ArrayList<WalkLocation> waypoints; // A list of the waypoints along the walking tour
 	
 	/** Sets the title of a given walking tour
 	* @param title the title of the walking tour
@@ -46,12 +46,12 @@ public class Route {
 	/** Adds a location to the end of the list
 	* @param location the location added to the list
 	*/
-	public void addLocation(Waypoint location) {}
+	public void addLocation(WalkLocation location) {}
 	
 	/** Gets a location from the queue at the specified index
 	* @param index the index from which to get the location
 	*/
-	public Waypoint getLocation(int index) {}
+	public WalkLocation getLocation(int index) {}
 	
 	/** Deletes a the location at the specified index
 	* @param index at which to delete location
@@ -59,5 +59,5 @@ public class Route {
 	public void deleteLocation(int index) {}
 	
 	/**Default constructor*/
-	public Route() {}
+	public Walk() {}
 }
