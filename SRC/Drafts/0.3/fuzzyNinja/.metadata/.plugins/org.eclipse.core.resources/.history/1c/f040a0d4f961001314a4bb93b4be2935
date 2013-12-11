@@ -1,0 +1,7 @@
+package uk.ac.aber.cs22120.fuzzyNinja.pathfinder.Model;
+
+public abstract class AbsHTTPPostBuilder {
+	private String postString;
+	
+	public void buildString(Route postRoute) {}
+}

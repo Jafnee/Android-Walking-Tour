@@ -1,0 +1,24 @@
+package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+
+public abstract class AbsHTTPPostBuilder {
+	
+	private Queue locationObjects
+	
+	private StringBuilder postString;
+	
+	public void buildString(Route postRoute)
+	{
+		
+		
+		
+	}
+	
+	public void addString(String concat)
+	{
+		postString.append("&" + concat);	
+	}
+	
+	public void getString()
+	
+	
+}

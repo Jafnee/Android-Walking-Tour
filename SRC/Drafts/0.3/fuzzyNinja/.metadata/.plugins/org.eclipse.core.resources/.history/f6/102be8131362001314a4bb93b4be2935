@@ -1,0 +1,16 @@
+package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+
+import android.location.Location;
+import android.location.LocationManager;
+
+public class RouteLocationManager implements Runnable, LocationListener{
+	
+	private LocationManager lm;
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

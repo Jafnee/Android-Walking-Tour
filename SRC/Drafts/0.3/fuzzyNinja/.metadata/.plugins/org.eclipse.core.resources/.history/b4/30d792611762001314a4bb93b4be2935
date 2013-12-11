@@ -1,0 +1,21 @@
+package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+
+import java.util.Queue;
+
+public class Route 
+{
+
+	private Queue<RouteLocation> routeLocations;
+	
+	public Route()
+	{
+		
+		
+		
+	}
+	
+	public void addLocation(RouteLocation location){
+		routeLocations.add(location);
+	}
+	
+}
