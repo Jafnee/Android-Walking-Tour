@@ -26,18 +26,24 @@ public final class R {
         public static final int textfield_background=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080008;
-        public static final int btnCreateNewRoute=0x7f080007;
-        public static final int btnEditExistingTour=0x7f080000;
-        public static final int button1=0x7f080001;
-        public static final int edittour=0x7f080003;
-        public static final int lblLogout=0x7f080004;
-        public static final int menu=0x7f080006;
-        public static final int progressBar1=0x7f080002;
-        public static final int savedtour=0x7f080005;
+        public static final int BtnRegister=0x7f080001;
+        public static final int action_settings=0x7f08000c;
+        public static final int btnCancelRegister=0x7f08000a;
+        public static final int btnCreateAccount=0x7f080009;
+        public static final int btnLogin=0x7f080000;
+        public static final int loginProgress=0x7f080002;
+        public static final int progressBar_Registration=0x7f08000b;
+        public static final int txtbxPassword=0x7f080003;
+        public static final int txtbxRegisterPassword=0x7f080005;
+        public static final int txtbxRegisterPasswordConfirm=0x7f080007;
+        public static final int txtbxRegisterPersonName=0x7f080008;
+        public static final int txtbxRegisterUsername=0x7f080006;
+        public static final int txtbxUsername=0x7f080004;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int activity_login=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_register=0x7f030002;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
