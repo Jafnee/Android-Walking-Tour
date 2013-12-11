@@ -7,20 +7,20 @@ public class GPSLocation {
 	/** Sets the latitude
 	* @param lat the latitude in degrees
 	*/
-	public void setLatitude(double lat);
+	public void setLatitude(double lat) {}
 	
 	/** Gets the latitude
 	* @return Returns the latitude in degrees
 	*/
-	public double getLatitude();
+	public double getLatitude() {}
 	
 	/** Sets the longitude
 	* @param lng the longitude in degrees
 	*/
-	public void setLongitude(double lng);
+	public void setLongitude(double lng) {}
 	
 	/** Gets the longitude
 	* @return Returns the longitude in degrees
 	*/
-	public double getLongitude();
+	public double getLongitude() {}
 }

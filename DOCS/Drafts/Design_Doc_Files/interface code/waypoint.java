@@ -7,7 +7,7 @@ import java.util.Date;
 /** Specifies a waypoint in the walking tour
 *
 */
-public class WalkLocation {
+public class Waypoint {
 	private GPSLocation coordinates; // GPS coordinates for the waypoint
 	private String name; // Name given to the waypoint
 	private String description; // Description given to the waypoint
@@ -17,7 +17,7 @@ public class WalkLocation {
 	/** Default constructor for this class
 	* GPS coordinates and timestamp should be assigned in this method
 	*/
-	public WalkLocation() {}
+	public Waypoint() {}
 	
 	/** Adds a Bitmap object to the list of photos
 	* @param photo photo to be added
