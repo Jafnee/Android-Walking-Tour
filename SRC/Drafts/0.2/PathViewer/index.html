@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<title>Walking Tour Displayer</title>
+	<link rel = "stylesheet" type = "text/css" href = "styles.css" />
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBXciRE4QaBPIsr0gj3jjpO_eUaW4huja4&sensor=false"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!--http://lokeshdhakar.com/projects/lightbox2/-->
+	<script src = "lightbox/js/lightbox-2.6.min.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "lightbox/css/lightbox.css" />	
+		
+	<script type = "text/javascript">
+		var map;
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var waypointarray = new Array();
+		var start = new google.maps.LatLng(52.415525,-4.087247);
+		var end =  new google.maps.LatLng(52.415489,-4.063076);
+		function initialize() {
+			directionsDisplay = new google.maps.DirectionsRenderer();
+			var Aberystwyth = new google.maps.LatLng(52.415303,-4.08292);
+			var mapOptions = {
+    			 	 zoom: 15,
+   				 center: Aberystwyth
+  				}
+  			map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+				
+			directionsDisplay.setMap(map);
+			
+			waypointarray.push({location: new google.maps.LatLng(52.416601,-4.084212),stopover: true});
+			var request = {
+			     origin:start,
+			     waypoints: waypointarray,
+			      destination:end,
+ 			     travelMode: google.maps.TravelMode.WALKING
+ 			};
+			directionsService.route(request, function(response, status) {
+   				if (status == google.maps.DirectionsStatus.OK) {
+      					directionsDisplay.setDirections(response);
+   				 }
+  			});
+
+			popInfo();
+
+			
+		}
+
+		function popInfo() {
+			$('#info').append("<h2><a href = '' onclick = 'showInfo(1); return false;'>Start: Aberystwyth Pier</a></h2>");
+			$('#info').append("<div class = 'info 1'>");
+				$('.info.1').append("<a href = 'pier_2.jpg' data-lightbox = 'info-1' title = 'Aber Pier'><img src = 'pier_2.jpg' class = 'gallimg' / ></a>");
+				$('.info.1').append("<a href = 'aber_pier.jpg' data-lightbox = 'info-1' title = 'Aber Pier'><img src = 'aber_pier.jpg' class = 'gallimg' / ></a>");
+				$('.info.1').append("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pretium ante at sapien ultrices, id vestibulum odio accumsan. Donec at bibendum nibh. Maecenas suscipit eros sit amet leo interdum, vel scelerisque nulla mattis. In vitae luctus ante. Integer cursus augue vel ante dictum, vitae consequat felis pharetra. Proin at libero id dolor porta aliquam id ut odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>");	
+			$('#info').append("</div>");
+			$('#info').append("<h2><a href = '' onclick = 'showInfo(2); return false;'>Waypoint 1: Ceredigion Museum</a></h2>");
+			$('#info').append("<div class = 'info 2' style = 'display: none;'>");
+				$('.info.2').append("<a href = 'aber_pier.jpg' data-lightbox = 'info-2' title = 'Aber Pier'><img src = 'aber_pier.jpg' width = '200px' height = '200px' / ></a>");
+			$('#info').append("</div>");
+			$('#info').append("<h2><a href = '' onclick = 'showInfo(3); return false;'>Finish: Aberystwyth University</a></h2>");
+			
+		}
+
+		function showInfo(i) {
+			$('div.info').slideUp();
+			$('div.info.'+i).slideDown();
+			if(i == 1) {
+				map.setCenter(start);
+			} else if(i == (waypointarray.length + 2)) {
+				map.setCenter(end);
+			} else {
+				var latLng = waypointarray[i-2].location;
+				map.setCenter(latLng);
+			}	
+			
+			map.setZoom(17);	
+		}
+		
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {  
+			    alert("Pressed some shit");		
+		});
+	</script>
+</head>
+<body>
+	<div id = "wrapper">
+		<div id = "main">			
+		<div id = "heading">
+			<h1>Walking Tour Displayer</h1>
+		</div>
+		
+			
+			<div id = "map">
+			
+			</div>		
+			<div id = "info">
+			<div id = "tour-desc">
+				<h3>Tour Description:</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel erat tortor. Pellentesque mi sapien, semper at arcu quis, ullamcorper euismod est. Sed vestibulum ipsum vel hendrerit dapibus. Ut consectetur arcu semper tincidunt mollis. Vivamus a fermentum mi. Praesent tincidunt elementum congue. Praesent ut lorem gravida, dignissim dolor sit amet, ornare sem.
+
+Sed lacinia, nunc vitae ornare vehicula, turpis nunc aliquet mauris, nec mattis nulla erat in ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce in vestibulum velit, a consectetur sapien. Sed tortor velit, condimentum quis sodales eget, semper ut leo. Donec eleifend tellus in purus luctus ornare. Cras adipiscing ipsum mollis sodales facilisis. Mauris lacinia sed purus iaculis semper. Duis sodales aliquet sem, id mattis velit egestas non. Nunc malesuada eget est fermentum condimentum. Ut accumsan aliquet justo, eget rhoncus nibh. Nullam velit augue, sagittis et metus in, ornare suscipit eros. Sed et tortor nec lacus suscipit dictum. Ut gravida quis felis eget lacinia.</p>
+			</div>
+			</div>
+		<div class = "clear"></div>
+		</div>
+	</div>
+</body>
+</html>
