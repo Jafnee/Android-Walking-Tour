@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PathFinder</string>
+    <string name="activity_main_title">ActivityMain</string>
+    <string name="action_settings_title">Settings</string>
+    <string name="activity_login_title">ActivityLogin</string>
+    <string name="activity_register_title">ActivityRegister</string>
+    <string name="activity_new_way_point_title">New Waypoint</string>
+
+</resources>

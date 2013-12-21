@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ActivitySettings" >
+
+    <Switch
+        android:id="@+id/switchWIFIUpload"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/switchDataUpload"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:text="Wifi Upload"
+        tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/switchGPSPositioning"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/switchWIFIUpload"
+        android:layout_below="@+id/switchWIFIUpload"
+        android:layout_marginTop="21dp"
+        android:text="Use GPS Location Service"
+        tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/switchDataUpload"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/switchGPSPositioning"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Network Data Upload"
+        tools:ignore="HardcodedText" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="134dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

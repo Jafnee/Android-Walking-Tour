@@ -1,14 +1,25 @@
-/*
- * Scope: This class is a extension of a location on the route, holding information about the current point.
+/* 
+ * Author: Joshua C Moss
+ * Date Created:
+ * Date Last Modified:
+ * Co Authors:
+ * 
+ * 
  * */
+
+/*
+ * Scope: This class is an extension of a RouteLocation; a location on the route,
+ * holding information about the current point as opposed to the position only.
+ * 
+ * */
+
+
 
 package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 public class Waypoint extends RouteLocation 
 {
 
-	
-	
 	public Waypoint()
 	{
 		
