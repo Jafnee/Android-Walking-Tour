@@ -1,7 +1,15 @@
+/* 
+ * Author: Joshua C Moss
+ * Date Created:
+ * Date Last Modified:
+ * Co Authors:
+ * 
+ * 
+ * */
+
 package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class Route 
 {
