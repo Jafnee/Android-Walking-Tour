@@ -4,12 +4,33 @@
     android:layout_height="match_parent" >
 
 
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-    <fragment 
-        android:id="@+id/map"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        class="com.google.android.gms.maps.SupportMapFragment"
-        />
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create New Walk"
+                android:id="@+id/button"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
 
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create New Waypoint"
+                android:id="@+id/button2"
+                android:layout_below="@+id/button"
+                android:layout_centerHorizontal="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:id="@+id/button3"
+                android:layout_below="@+id/button2"
+                android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 </LinearLayout>
