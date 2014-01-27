@@ -1,0 +1,29 @@
+table walks
+----------------
+int id
+text title
+text shortDesc
+longtext longDesc
+float hours
+float distance
+
+table location
+----------------
+int id
+int walkID
+float latitude
+float longitude
+float timestamp
+
+table description
+-----------------
+int id
+int locationID
+text description
+
+table photo
+-----------------
+int id
+int placeID
+text photoName
+

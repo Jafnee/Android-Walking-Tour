@@ -1,11 +1,5 @@
 package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.view;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-
 import uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.R;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,18 +9,12 @@ import android.view.MenuItem;
 
 public class ActivityMain extends FragmentActivity {
 
-	private GoogleMap routeMap;
-
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-				
-	   routeMap = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-	   routeMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(52.41370, -4.08655)));
-	    
-	    
+
 	}
 
 	@Override
