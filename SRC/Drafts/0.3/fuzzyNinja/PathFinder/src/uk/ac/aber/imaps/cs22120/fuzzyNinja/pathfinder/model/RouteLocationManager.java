@@ -7,7 +7,7 @@
  * 
  * */
 
-package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+/**package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -87,4 +87,4 @@ public class RouteLocationManager implements Runnable, LocationListener{
 		
 	}
 
-}
+}**/

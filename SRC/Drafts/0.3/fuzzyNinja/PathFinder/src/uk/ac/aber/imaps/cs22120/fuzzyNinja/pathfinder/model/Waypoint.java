@@ -2,7 +2,7 @@
  * Scope: This class is a extension of a location on the route, holding information about the current point.
  * */
 
-package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+/**package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 public class Waypoint extends RouteLocation 
 {
@@ -57,3 +57,4 @@ public class Waypoint extends RouteLocation
 	timestamp = t;
 	}
 }
+**/
