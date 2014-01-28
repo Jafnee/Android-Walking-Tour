@@ -1,4 +1,4 @@
-package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+/**package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 public class Model {
 
@@ -22,3 +22,4 @@ public class Model {
 	}
 	
 }
+**/

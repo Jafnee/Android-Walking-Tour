@@ -19,20 +19,21 @@ public class RouteLocation
 	 * */
 	
 	private Location location;
-	private Model model;
+    private double lat,lon;
+	//private Model model;
 	
 	
 	public RouteLocation(){
 		
 	}
 	
-	public RouteLocation(Model model)
+	/**public RouteLocation(Model model)
 	{
 		this.model = model;
 		
 		
 		
-	}
+	}**/
 	
 	public void setLocation()
 	{

@@ -1,4 +1,4 @@
-package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+/**package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -34,4 +34,4 @@ public class TestRouteLocation{
 	public void testGetAccuracyWithNullValue(){
 	
 	}
-}
+}**/

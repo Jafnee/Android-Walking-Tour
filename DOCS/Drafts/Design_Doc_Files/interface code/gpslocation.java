@@ -1,6 +1,6 @@
 package uk.ac.aber.cs22120.fuzzyNinja.pathFinder;
 
-public class GPSLocation {
+public class gpslocation {
 	private double latitude; // Represents a latitude, given in degrees
 	private double longitude; // Represents a longitude, given in degrees
 	
@@ -22,5 +22,7 @@ public class GPSLocation {
 	/** Gets the longitude
 	* @return Returns the longitude in degrees
 	*/
-	public double getLongitude() {}
+	public double getLongitude() {
+        return 2.22;
+    }
 }
