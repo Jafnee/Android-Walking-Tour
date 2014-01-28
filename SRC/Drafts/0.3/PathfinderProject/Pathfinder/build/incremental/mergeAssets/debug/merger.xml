@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/aber/lpd1/Documents/fuzzyNinja/SRC/Drafts/0.3/PathfinderProject/Pathfinder/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/aber/lpd1/Documents/fuzzyNinja/SRC/Drafts/0.3/PathfinderProject/Pathfinder/src/debug/assets" />
+    </dataSet>
+
+</merger>

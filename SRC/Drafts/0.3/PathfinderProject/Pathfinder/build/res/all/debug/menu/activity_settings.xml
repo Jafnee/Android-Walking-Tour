@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>
+<!-- From: file:/aber/lpd1/Documents/fuzzyNinja/SRC/Drafts/0.3/PathfinderProject/Pathfinder/src/main/res/menu/activity_settings.xml -->
