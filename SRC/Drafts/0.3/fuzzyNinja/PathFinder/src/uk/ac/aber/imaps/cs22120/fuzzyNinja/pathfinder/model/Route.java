@@ -12,14 +12,14 @@ package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 import java.util.Date;
 import java.util.LinkedList;
 
-public class Route 
+public class Route
 {
 
 
-	private String title;                       //Title of the walking tour
-	private String shortDescription;            //Short description of the walking tour
-	private String longDescription;             //Long description of the walking tour
-	private LinkedList<Waypoint> waypoints;     //List of the waypoints along the walking tour
+    private String title;                       //Title of the walking tour
+    private String shortDescription;            //Short description of the walking tour
+    private String longDescription;             //Long description of the walking tour
+    private LinkedList<Waypoint> waypoints;     //List of the waypoints along the walking tour
     private Waypoint waypoint;
 
 
@@ -37,11 +37,11 @@ public class Route
      *
      * @param title The title for the walking tour object
      */
-	public Route(String title)
-	{
-		this.setTitle(title);
-		waypoints = new LinkedList<Waypoint>();
-	}
+    public Route(String title)
+    {
+        this.setTitle(title);
+        waypoints = new LinkedList<Waypoint>();
+    }
 
     /**
      * Sets the title of the walking tour
@@ -115,11 +115,11 @@ public class Route
      * @param wLongitude the longitude of the waypoint
      * @param wTimestamp The timestamp of the waypoint
      */
-	public void addLocation(double wLatitude, double wLongitude,Date wTimestamp)
+    public void addLocation(double wLatitude, double wLongitude,Date wTimestamp)
     {
         waypoint = new Waypoint(wLatitude, wLongitude, wTimestamp);
-		waypoints.addLast(waypoint);
-	}
+        waypoints.addLast(waypoint);
+    }
 
     /**
      * Gets a waypoint from the list at the specified index
@@ -127,10 +127,10 @@ public class Route
      * @param index The index of the location
      * @return Returns an an object of Waypoint
      */
-	public Waypoint getLocation(int index)
+    public Waypoint getLocation(int index)
     {
-		return waypoints.get(index);
-	}
+        return waypoints.get(index);
+    }
 
 
     /**

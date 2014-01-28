@@ -7,18 +7,16 @@
  * 
  * */
 
-/**package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
+package uk.ac.aber.imaps.cs22120.fuzzyNinja.pathfinder.model;
 
-import android.content.ContentResolver;
 import android.content.Context;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+import android.location.*;
 import android.os.Bundle;
 
 
 public class RouteLocationManager implements Runnable, LocationListener{
-	
+
+
 //	private Location location;
 //	
 //	private Route route;
@@ -33,7 +31,7 @@ public class RouteLocationManager implements Runnable, LocationListener{
 	
 	public void setup()
 	{
-		locMan = (LocationManager) Context.getSystemService(Context.LOCATION_SERVICE);
+		//locMan = (LocationManager) Context.getSystemService(Context.LOCATION_SERVICE);
 	}
 	
 	public RouteLocationManager(Route route)
@@ -73,13 +71,8 @@ public class RouteLocationManager implements Runnable, LocationListener{
 	@Override
 	public void onProviderEnabled(String arg0) {
 		// TODO Auto-generated method stub
-		try {
-		notify();
-		} catch (InterruptedException tErr) {
-			tErr.printStackTrace();
-			System.out.println("Error - Cannot gain Locaton Service Handle");
-		}
-	}
+        notify();
+    }
 
 	@Override
 	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
@@ -87,4 +80,4 @@ public class RouteLocationManager implements Runnable, LocationListener{
 		
 	}
 
-}**/
+}
