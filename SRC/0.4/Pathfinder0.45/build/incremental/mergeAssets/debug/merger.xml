@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/aber/jap38/Documents/Pathfinder0.45Project/Pathfinder0.45/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/aber/jap38/Documents/Pathfinder0.45Project/Pathfinder0.45/src/debug/assets" />
+    </dataSet>
+
+</merger>
