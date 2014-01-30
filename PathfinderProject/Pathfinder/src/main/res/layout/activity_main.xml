@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" >
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/textfield_background">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Create New Walk"
+                android:id="@+id/btnNewWalk"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:onClick="onClick"
+                android:textStyle="bold"
+                android:typeface="serif"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="Save Walk"
+            android:id="@+id/btnSaveWalk"
+            android:focusable="false"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_below="@+id/btnNewWaypoint"
+            android:layout_alignLeft="@+id/btnNewWaypoint"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/btnNewWaypoint"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Create New Waypoint"
+                android:id="@+id/btnNewWaypoint"
+                android:layout_below="@+id/btnNewWalk"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:textStyle="bold"
+                android:typeface="serif"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="PATHFINDER"
+                android:id="@+id/textHeading"
+                android:layout_marginTop="53dp"
+                android:singleLine="false"
+                android:clickable="false"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentStart="false"
+                android:textSize="40dp"
+                android:gravity="center"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Created by Group 15"
+                android:id="@+id/textView"
+                android:textStyle="italic"
+                android:layout_below="@+id/textHeading"
+                android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</LinearLayout>
