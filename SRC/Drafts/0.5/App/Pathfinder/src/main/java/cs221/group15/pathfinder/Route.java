@@ -1,5 +1,5 @@
 /*
- *@(#)Route.java 0.5 2014-01-31
+ *@(#)Route.java 1.0 2014-01-31
  * 
  * Copyright (c)2014 Aberystwyth University.
  * All rights reserved.
@@ -12,9 +12,14 @@ package cs221.group15.pathfinder;
  * The waypoints will be stored in an array list of Waypoint objects {@link #waypoint}.
  * @see Waypoint
  * 
- * @author
- * @since
- * @version
+ * The Route will also be sent over the Internet to a web server where it will be stored
+ * and the tour will be viewable on a map; once the user is done recording the walk.
+ * @see HTTPPostSender
+ * 
+ * @author lpd1
+ * @author gad16
+ * @since	0.1
+ * @version 1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  */
 public class Route {
     private long id;
@@ -103,8 +108,11 @@ public class Route {
 
     
     /**
+     * Sets the amount of time the user takes to record the walking tour,
+     * by totaling up the time it takes to reach one way point to another.
+     * The time is measured in hours.
      * 
-     * @param hours
+     * @param hours is the total amount of time to complete a walking tour as a float
      */
     public void setHours(float hours) {
         this.hours = hours;
@@ -112,8 +120,10 @@ public class Route {
 
     
     /**
+     * Returns the amount of time required to complete a walking tour
+     * in hours.
      * 
-     * @return
+     * @return the number of hours as a float
      */
     public float getHours() {
         return this.hours;
@@ -121,8 +131,11 @@ public class Route {
 
     
     /**
+     * Sets the total distance of the walking tour in meters.
+     * This is done by getting the distances of one waypoint to
+     * another and getting the sum of them.
      * 
-     * @param distance
+     * @param distance the distance to be set for the Route
      */
     public void setDistance(float distance) {
         this.distance = distance;
@@ -130,8 +143,10 @@ public class Route {
 
     
     /**
+     * Returns the distance of a walking tour from start to finish and
+     * while going through all of the waypoints.
      * 
-     * @return
+     * @return the distance as a float
      */
     public float getDistance() {
         return this.distance;
@@ -173,7 +188,7 @@ public class Route {
     /**
      * Will return the number of waypoints in the walking tour.
      * 
-     * @return the number of waypoints as an int value
+     * @return the number of waypoints as an integer value
      */
     public int getTotalWaypoints() {
     	return this.waypoint.length; 
@@ -189,5 +204,4 @@ public class Route {
     public Waypoint getWaypoint(int i) {
     	return this.waypoint[i]; 
     }
-
 }
