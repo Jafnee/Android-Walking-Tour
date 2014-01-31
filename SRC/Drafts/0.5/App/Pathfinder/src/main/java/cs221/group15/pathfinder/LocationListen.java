@@ -1,3 +1,9 @@
+/*
+ *@(#)LocationListen.java 0.5 2014-01-31
+ * 
+ * Copyright (c)2014 Aberystwyth University.
+ * All rights reserved.
+ */
 package cs221.group15.pathfinder;
 
 import android.location.Location;
@@ -5,7 +11,16 @@ import android.location.LocationListener;
 import android.os.Bundle;
 
 /**
- * Created by lews on 30/01/14.
+ * This class handles the GPS coordinates that will be assigned to
+ * the waypoints. The class will have an object of type Location
+ * that will update itself when the user moves to a new position.
+ * @see Waypoint
+ * 
+ * 
+ * 
+ * @author
+ * @since
+ * @version
  */
 public class LocationListen implements LocationListener {
     MainActivity parent;
@@ -15,6 +30,13 @@ public class LocationListen implements LocationListener {
 
     }
 
+    
+    /**
+     * This method will be called if the current location update does not
+     * match the last known location.
+     * The new Location object will be sent to the MainActivity.
+     * @see MainActivity
+     */
     @Override
     public void onLocationChanged(Location location) {
         parent.updateLocation(location);
@@ -35,6 +57,4 @@ public class LocationListen implements LocationListener {
     public void onProviderDisabled(String s) {
 
     }
-
-
 }
