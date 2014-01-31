@@ -1,4 +1,9 @@
-//http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html
+/*
+ *@(#)LocationListen.java 0.5 2014-01-31
+ * 
+ * Copyright (c)2014 Aberystwyth University.
+ * All rights reserved.
+ */
 
 
 package cs221.group15.pathfinder;
@@ -13,7 +18,16 @@ import android.location.Location;
 import android.util.Log;
 
 /**
- * Created by owd2 on 28/01/2014.
+ * This class is responsible for the creation and implementation
+ * of the database stored on the phone.
+ * 
+ * The database will store the walking tour objects {@link Route} and the 
+ * waypoint objects {@link Waypoint} associated with them.
+ * 
+ * @author
+ * @since
+ * @version
+ *
  */
 class DatabaseHandler extends SQLiteOpenHelper{
 
@@ -46,31 +60,40 @@ class DatabaseHandler extends SQLiteOpenHelper{
     private static final String KEY_WALK_ID = "walkID";
     private static final String KEY_LOCATION_ID = "locationID";
 
-    /*
+    
+    /**
      * Constructor for initializing the database
+     *
+     * @param context
      */
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    //Implements table for routes
+    /**
+     * Implements table for routes
+     */
     private static final String CREATE_ROUTE_TABLE = "CREATE TABLE " + TABLE_ROUTE + "("
             +KEY_ID+ " INTEGER PRIMARY KEY, " + KEY_TITLE + " TEXT, "
             +KEY_SHORT+ " TEXT, " +KEY_LONG+ " TEXT, " + KEY_DISTANCE + " FLOAT, " + KEY_HOURS + " FLOAT" +  ")";
 
-    //Implements table for waypoints
+    /**
+     * Implements table for waypoints
+     */
     private static final String CREATE_WAYPOINT_TABLE = "CREATE TABLE " +TABLE_WAYPOINT+ "("
             +KEY_ID+ " INTEGER PRIMARY KEY, " + KEY_WALK_ID + " INTEGER, " + KEY_LAT + " FLOAT, " + KEY_LNG + " FLOAT, "+KEY_TIMESTAMP+ " FLOAT "+
             " TEXT" + ")";
 
-    //Implements table for descriptions
+    /**
+     * Implements table for descriptions
+     */
     private static final String CREATE_DESCRIPTION_TABLE = "CREATE TABLE " + TABLE_DESC + "(" +
             KEY_ID+" INTEGER PRIMARY KEY, " + KEY_LOCATION_ID + " INTEGER, " + KEY_DESCRIPTION + " TEXT)";
 
     private static final String CREATE_PHOTO_TABLE = "CREATE TABLE " + TABLE_PHOTO + "(" +
             KEY_ID+" INTEGER PRIMARY KEY, " + KEY_LOCATION_ID + " INTEGER, " + KEY_IMAGE + " TEXT)";
 
-    /*
+    /**
      * Creates tables for route and waypoints
      */
     @Override
@@ -81,7 +104,7 @@ class DatabaseHandler extends SQLiteOpenHelper{
         db.execSQL(CREATE_PHOTO_TABLE);
     }
 
-    /*
+    /**
      * Checks versions of tables and on upgrade drop older tables and the creates new tables
      */
     @Override
@@ -96,9 +119,13 @@ class DatabaseHandler extends SQLiteOpenHelper{
 
 
 
-    /*
+    /** 
      * Adds the content from the route variables to the relevant column in the database
      * Database then inserts a new row and closes the database connection
+     *
+     * @param 	route is the specified walking tour that needs it's contents to be stored
+     * 			in the database
+     * @return 	the id of the route
      */
     public long addRoute(Route route){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -117,7 +144,11 @@ class DatabaseHandler extends SQLiteOpenHelper{
 
 
     /**
-     * Will, at some point, get the route
+     * Returns the a walking tour from the database, by using it's ID
+     * in the database
+     * 
+     * @param id of the route
+     * @return the Route object
      */
      public Route getRoute(int id) {
          SQLiteDatabase db = this.getWritableDatabase();
@@ -137,13 +168,16 @@ class DatabaseHandler extends SQLiteOpenHelper{
 
          return route;
      }
-
-    /*
-     Removes a route from the database.
-     It matches the ID from the database and the ID from the route and then deletes that row
-     Connection to the database is then closed
-    */
-
+     
+   
+     /**
+      * Removes a route from the database.
+      * It matches the ID from the database and the ID from the route and
+      * then deletes that row.
+      * Connection to the database is then closed.
+      * 
+      * @param route the specified route to be removed from the database
+      */
     public void removeRoute(Route route){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_ROUTE, KEY_ID + " = ?",
@@ -152,10 +186,14 @@ class DatabaseHandler extends SQLiteOpenHelper{
 
     }
 
-    /*
+    
+    /**
      * Updates a route entry in the database
      * Matches ID from the database to the ID from the route then updates the row with the new values
-    */
+     * 
+     * @param route the specified route to be updated
+     * @return
+     */
     public int updateRoute(Route route){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -168,11 +206,14 @@ class DatabaseHandler extends SQLiteOpenHelper{
                 new String[] { String.valueOf(route.getId())});
     }
 
-    /*
-     * Adds the content from the waypoint variables to the relevant column in the database
+ 
+    /**
+     * Adds the content from the waypoint variables to the relevant column in the database.
      * Database then inserts a new row and closes the database connection
-
-    */
+     * 
+     * @param waypoint
+     * @return
+     */
     public long addWaypoint(Waypoint waypoint){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -194,7 +235,12 @@ class DatabaseHandler extends SQLiteOpenHelper{
     }
 
 
-    /*Currently returns ids of all waypoints. Will return all waypoints in tour. Yay debugging. */
+    /**
+     * Returns all the waypoints of a specified route in the database.
+     * 
+     * @param walkID is the ID of the route
+     * @return an array that of all the waypoints in a route
+     */
     public Waypoint[] getAllWaypoints(long walkID) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -227,23 +273,31 @@ class DatabaseHandler extends SQLiteOpenHelper{
         }
         return data;
     }
-    /*
-     * Removes a waypoint from the database
-     * Matches the ID from the database and the ID from the route and then deletes that row
-     * Connection to the database is the closed
-    */
+  
+    
+    /**
+     * Removes a waypoint from the database.
+     * Matches the ID from the database and the ID from the route and then deletes that row.
+     * Connection to the database is the closed.
+     * 
+     * @param waypoint is the waypoint to be removed from the database.
+     */
     public void removeWaypoint(Waypoint waypoint){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_WAYPOINT, KEY_ID + " = ?",
                 new String[] { String.valueOf(waypoint.getId())});
         db.close();
-
     }
 
-    /*
-     * Updates a waypoint entry in the database
-     * Matches ID from the database to the ID from the route then updates the row with the new values
-    */
+   
+    /**
+     * Updates a waypoint entry in the database.
+     * Matches ID from the database to the ID from the route
+     * then updates the row with the new values.
+     * 
+     * @param waypoint is the waypoint to be updated
+     * @return
+     */
     public int updateWaypoint(Waypoint waypoint){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -256,11 +310,16 @@ class DatabaseHandler extends SQLiteOpenHelper{
 
         return db.update(TABLE_WAYPOINT, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(waypoint.getId())});
-
     }
 
 
-
+    /**
+     * Returns the description of a walking tour. By using it's ID to
+     * look for it in the database.
+     * 
+     * @param LocationID is the ID of the Route
+     * @return the description as a String
+     */
     public String getDescription(int LocationID) {
         String desc = "";
         SQLiteDatabase db  = this.getWritableDatabase();
@@ -278,6 +337,13 @@ class DatabaseHandler extends SQLiteOpenHelper{
         return desc;
     }
 
+    /**
+     * Sets the description of a specified walking tour, it is selected by searching
+     * the database for it's ID.
+     * 
+     * @param locationID is the ID of the Route
+     * @param description is the description to be set
+     */
     public void addDescription(long locationID, String description) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -288,6 +354,12 @@ class DatabaseHandler extends SQLiteOpenHelper{
         db.insert(TABLE_DESC,KEY_DESCRIPTION,values);
     }
 
+    /**
+     * Returns the image of a waypoint from the database.
+     * 
+     * @param LocationID is the ID of the Route
+     * @return is an image that has been converted to a String
+     */
     public String[] getImages(int LocationID) {
         String[] images = null;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -308,6 +380,12 @@ class DatabaseHandler extends SQLiteOpenHelper{
         return images;
     }
 
+    /**
+     * Sets an image of a specified waypoint in the database.
+     * 
+     * @param LocationID is the ID of the Waypoint
+     * @param images is the image in the form of a String to be set
+     */
     public void insertImages(long LocationID, String[] images) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -321,9 +399,12 @@ class DatabaseHandler extends SQLiteOpenHelper{
         }
     }
 
-    Cursor getroutes()
+    /**
+     * 
+     * @return
+     */
+    Cursor getroutes() {
             //gets data from routes table
-    {
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cur=db.rawQuery("SELECT "+KEY_TITLE+" as _id, from "+TABLE_ROUTE,new String [] {});
 
