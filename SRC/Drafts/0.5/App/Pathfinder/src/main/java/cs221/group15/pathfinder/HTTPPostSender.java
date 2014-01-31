@@ -1,7 +1,12 @@
+/*
+ *@(#)LocationListen.java 0.5 2014-01-31
+ * 
+ * Copyright (c)2014 Aberystwyth University.
+ * All rights reserved.
+ */
 package cs221.group15.pathfinder;
 
 /**
- * Created by gad16 on 29/01/2014.
  */
 
 import java.io.BufferedReader;
@@ -37,6 +42,16 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * The class is responsible for building a string to use in a HTTP post
+ * request. It is only responsible for building and storing the request
+ * string.
+ * 
+ * @author	gad16
+ * @since	0.3
+ * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
+ *
+ */
 public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
     /**
      * Thread which constantly checks the network connection status.
@@ -67,6 +82,7 @@ public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
 
     /**
      * Class constructor, runs thread.
+     * 
      */
     public HTTPPostSender() {
         try {
@@ -80,6 +96,14 @@ public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
 
     }
 
+    
+    /**
+     * The override allows the method to perform it's computations in the background.
+     * This is done asynchronously to prevent the the application from freezing while
+     * the request is happening.
+     * Creates a new HttpClient and a Post Header.
+     * The Apache HttpClient is used to handle HTTP requests.
+     */
     @Override
     protected Void doInBackground(Route... routes) {
         StringBuffer sb = new StringBuffer();
@@ -128,14 +152,10 @@ public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
         return isAvailable;
     }
 
-    /**
-     * Attempts to send the HTTP POST request to the server.
-     * @return boolean value stating whether or not the POST request was received by the server.
-     */
-
 
     /**
-     * Should be easy to understand.
+     * Returns true if the POST has managed to go through the server successfully, false if something
+     * has gone wrong in between.
      * @param s String returned from the trySend() method i.e. PHP response from the server.
      * @return boolean value. True if request was successful, false otherwise.
      */
@@ -145,6 +165,8 @@ public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
 
     /**
      * Builds a string containing the HTTP POST request.
+     * Creates a JSON object and is filled up with key value pairs to be sent through
+     * the POST.
      * @param postRoute the walking tour used to build the request string.
      */
     public void buildString(Route postRoute, ContentResolver cr) {
@@ -176,36 +198,12 @@ public class HTTPPostSender extends AsyncTask<Route,Void,Void> {
         } catch (Exception e) {
             Log.e("Error:", e.getMessage());
         }
-
-
-     /*   for (int i = 0; i < postRoute.getTotalWaypoints();i++) {
-            JSONObject waypoint = new JSONObject();
-            try {
-                waypoint.put("name", postRoute.getWaypoint(i).getName());
-                waypoint.put("latitude", postRoute.getWaypoint(i).getLatitude());
-                waypoint.put("longitude", postRoute.getWaypoint(i).getLongitude());
-                waypoint.put("description", postRoute.getWaypoint(i).getDescription());
-
-                // Encoding a bitmap into a string for POST request:
-                // http://stackoverflow.com/questions/4830711/how-to-convert-a-image-into-base64-string
-
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                postRoute.getWaypoint(i).getPhoto().compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                byte[] photo = stream.toByteArray(); // Convert bitmap to byte array
-                String encodedPhoto = Base64.encodeToString(photo, Base64.DEFAULT); // Converts byte array to string
-                waypoint.put("photo", encodedPhoto);
-
-                waypoint.put("timestamp", postRoute.getWaypoint(i).getTimestamp());
-                route.put(waypoint);
-            } catch (Exception e) {
-
-            } */
-
-
-
         postMessage = parent.toString();
     }
 
+    /**
+     * Setting this to be false will stop the network thread from running.
+     */
     public void close() {
         isRunning = false;
     }
