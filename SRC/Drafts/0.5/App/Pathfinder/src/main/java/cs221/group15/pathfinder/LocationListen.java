@@ -20,7 +20,7 @@ import android.os.Bundle;
  * 
  * 
  * @author 	lpd1
- * @since 	0.1
+ * @since 	0.5
  * @version 1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  */
 public class LocationListen implements LocationListener {

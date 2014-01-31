@@ -24,9 +24,9 @@ import android.util.Log;
  * The database will store the walking tour objects {@link Route} and the 
  * waypoint objects {@link Waypoint} associated with them.
  * 
- * @author
- * @since
- * @version
+ * @author 	owd2
+ * @since 	0.4
+ * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  *
  */
 class DatabaseHandler extends SQLiteOpenHelper{
@@ -94,7 +94,9 @@ class DatabaseHandler extends SQLiteOpenHelper{
             KEY_ID+" INTEGER PRIMARY KEY, " + KEY_LOCATION_ID + " INTEGER, " + KEY_IMAGE + " TEXT)";
 
     /**
-     * Creates tables for route and waypoints
+     * Called when the database connection is being configured, to enable
+     * features such as write-ahead logging or foreign key support.
+     * Creates tables for route and waypoints.
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -105,6 +107,7 @@ class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     /**
+     * Called when the database needs to be upgraded.
      * Checks versions of tables and on upgrade drop older tables and the creates new tables
      */
     @Override
@@ -400,8 +403,11 @@ class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     /**
+     * Gets the pointer to the first result of the database. The Cursor
+     * can be used to get results
+     * relative to it, such as getting the next result.
      * 
-     * @return
+     * @return a cursor which points to the first result of the table
      */
     Cursor getroutes() {
             //gets data from routes table
