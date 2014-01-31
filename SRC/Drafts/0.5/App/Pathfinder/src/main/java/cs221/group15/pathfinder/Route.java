@@ -16,8 +16,8 @@ package cs221.group15.pathfinder;
  * and the tour will be viewable on a map; once the user is done recording the walk.
  * @see HTTPPostSender
  * 
- * @author lpd1
- * @author gad16
+ * @author 	lpd1
+ * @author 	gad16
  * @since	0.1
  * @version 1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  */
