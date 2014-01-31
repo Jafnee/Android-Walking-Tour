@@ -1,5 +1,5 @@
 /*
- *@(#)LocationListen.java 0.5 2014-01-31
+ *@(#)DatabaseHandler.java 0.5 2014-01-31
  * 
  * Copyright (c)2014 Aberystwyth University.
  * All rights reserved.
@@ -25,6 +25,8 @@ import android.util.Log;
  * waypoint objects {@link Waypoint} associated with them.
  * 
  * @author 	owd2
+ * @author 	lpd1
+ * @author	jam67
  * @since 	0.4
  * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  *

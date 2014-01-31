@@ -18,6 +18,7 @@ package cs221.group15.pathfinder;
  * 
  * @author 	lpd1
  * @author 	gad16
+ * @author 	jaj42
  * @since	0.1
  * @version 1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  */

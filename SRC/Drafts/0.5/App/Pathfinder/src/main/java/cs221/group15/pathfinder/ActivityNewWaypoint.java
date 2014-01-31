@@ -1,3 +1,9 @@
+/*
+ *@(#)ActivityNewWayPoint.java 0.5 2014-01-31
+ * 
+ * Copyright (c)2014 Aberystwyth University.
+ * All rights reserved.
+ */
 package cs221.group15.pathfinder;
 
 import cs221.group15.pathfinder.R;
@@ -29,9 +35,30 @@ import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
+
+/**
+ * Is the activity to create a new waypoint.
+ * 
+ * @see MainActivity
+ * 
+ * @author 	lpd1
+ * @author 	gad16
+ * @author	jap38
+ * @since	0.3
+ * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
+ *
+ */
 public class ActivityNewWaypoint extends Activity implements View.OnClickListener{
-    private Uri outputURI;
+    
+	private Uri outputURI;
     private ArrayList<String> images = new ArrayList<String>();
+    
+    
+    /**
+     * When the activity is created the method is executed.
+     * The method sets up the button for the user to go back to the main activity
+     * and has a listener, to detect when the user selects it.
+     */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,6 +79,12 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
 
 	}
 
+	
+	/**
+	 * When an item on the menu is selected the method is called.
+	 * When the user taps on the home button they are brought back to
+	 * the main activity.
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -69,6 +102,13 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
 		return super.onOptionsItemSelected(item);
 	}
 	
+	
+	/**
+	 * The method is executed when the user selects the create way point button..
+	 * Creates a new waypoint and sends the data back to the main activity.
+	 * 
+	 * @param view
+	 */
 	public void btnCreateWaypoint(View view){
         String description;
 
@@ -87,11 +127,26 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
 	}
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
+    
+    /**
+     * Sends the user to the camera application to take a picture to attach to the
+     * waypoint.
+     * 
+     * @param view the user's current view
+     */
     public void cameraClick(View view) {
 
             dispatchTakePictureIntent();
 
     }
+    
+    
+    /**
+     * When the user returns from the camera application the method will be executed.
+     * The picture will be assigned to imageBitmap. A notification will appear stating whether
+     * the attempt has been successful and adds the picture to the phone's gallery or 
+     * it has been unsuccessful.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
            //Log.e("Debug",outputURI.toString());
@@ -120,6 +175,12 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
     }
 
 
+    
+    /**
+     * The method ensures there's a camera activity to handle the intent and creates a file
+     * where the photo will go. The URI to the image is assigned to a variable if it has
+     * been successful.
+     */
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
@@ -147,6 +208,14 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
 
     private String mCurrentPhotoPath;
 
+    
+    /**
+     * The file creates an image file name and saves a file in a path for use with
+     * ACTION_VIEW intents.
+     * 
+     * @return the file created
+     * @throws IOException when it has a problem saving the file
+     */
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -164,6 +233,10 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
         return image;
     }
 
+    
+    /**
+     * Adds the picture taken into the phones gallery.
+     */
     private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         File f = new File(mCurrentPhotoPath);
@@ -172,6 +245,10 @@ public class ActivityNewWaypoint extends Activity implements View.OnClickListene
         this.sendBroadcast(mediaScanIntent);
     }
 
+    
+    /**
+     * 
+     */
     @Override
     public void onClick(View view) {
         this.dispatchTakePictureIntent();

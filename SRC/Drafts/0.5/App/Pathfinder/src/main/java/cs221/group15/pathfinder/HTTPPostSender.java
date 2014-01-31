@@ -1,5 +1,5 @@
 /*
- *@(#)LocationListen.java 0.5 2014-01-31
+ *@(#)HTTPPostSender.java 0.5 2014-01-31
  * 
  * Copyright (c)2014 Aberystwyth University.
  * All rights reserved.
@@ -48,6 +48,7 @@ import org.json.JSONObject;
  * string.
  * 
  * @author	gad16
+ * @author 	lpd1
  * @since	0.3
  * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
  *

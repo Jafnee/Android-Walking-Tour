@@ -1,3 +1,9 @@
+/*
+ *@(#)ActivityNewWalk.java 0.5 2014-01-31
+ * 
+ * Copyright (c)2014 Aberystwyth University.
+ * All rights reserved.
+ */
 package cs221.group15.pathfinder;
 
 import cs221.group15.pathfinder.R;
@@ -9,8 +15,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * Is the activity to create a new walking tour.
+ * 
+ * @author	lpd1
+ * @author 	gad16
+ * @author	jap38
+ * @since	0.3
+ * @version	1.0 2014-01-31 9ed077e148cf94320295b5f4553fb380cb6c0c43
+ *
+ */
 public class ActivityNewWalk extends Activity {
 
+	
+	/**
+     * When the activity is created the method is executed.
+     * The method sets up the button for the user to go back to the main activity
+     * and has a listener, to detect when the user selects it.
+     */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,6 +50,12 @@ public class ActivityNewWalk extends Activity {
 
 	}
 
+	
+	/**
+	 * When an item on the menu is selected the method is called.
+	 * When the user taps on the home button they are brought back to
+	 * the main activity.
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -45,6 +73,12 @@ public class ActivityNewWalk extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	/**
+	 * When the user selects the create walk button, a new tour walk will be created with
+	 * the title and descriptions the user has specified.
+	 * 
+	 * @param view
+	 */
 	public void btnCreateWalkClicked(View view){
 
 
@@ -64,5 +98,4 @@ public class ActivityNewWalk extends Activity {
         setResult(Activity.RESULT_OK,result);
         finish();
 	}
-
 }
